@@ -29,7 +29,7 @@ INICIO
     SE (idade >= 18) E (saldo >= valor_total) ENTAO
         saldo_restante <- saldo - valor_total
         
-        // Emissão de comprovante
+        Emissão de comprovante
         ESCREVA("")
         ESCREVA("--- COMPROVANTE DE COMPRA ---")
         ESCREVA("Cliente: ", nome)
