@@ -1,0 +1,55 @@
+GABRIEL JACINTO RODRIGUES PINTO
+ALGORITMO VendaProduto
+
+VAR
+    nome : TEXTO
+    idade : INTEIRO
+    saldo, preco_produto, valor_total, saldo_restante : REAL
+    quantidade : INTEIRO
+
+INICIO
+    Entrada de dados do cliente
+    ESCREVA("Digite o nome do cliente: ")
+    LEIA(nome)
+    
+    ESCREVA("Digite a idade do cliente: ")
+    LEIA(idade)
+    
+    ESCREVA("Digite o saldo do cliente (R$): ")
+    LEIA(saldo)
+    
+    Definição do produto
+    preco_produto <- 5.0
+    ESCREVA("Digite a quantidade desejada do produto (+18): ")
+    LEIA(quantidade)
+    
+    Cálculo do valor total
+    valor_total <- preco_produto * quantidade
+    
+     Validação das condições Idade e Saldo
+    SE (idade >= 18) E (saldo >= valor_total) ENTAO
+        saldo_restante <- saldo - valor_total
+        
+        Emissão de comprovante
+        ESCREVA("")
+        ESCREVA("--- COMPROVANTE DE COMPRA ---")
+        ESCREVA("Cliente: ", nome)
+        ESCREVA("Quantidade: ", quantidade, " unidades")
+        ESCREVA("Valor Total: R$ ", valor_total:0:2)
+        ESCREVA("Saldo Restante: R$ ", saldo_restante:0:2)
+        ESCREVA("Status: Compra realizada com sucesso.")
+        ESCREVA("---------------------------------")
+    SENAO
+        ESCREVA("")
+        ESCREVA("--- COMPRA NÃO REALIZADA ---")
+        
+        SE idade < 18 ENTAO
+            ESCREVA("Motivo: Venda proibida para menores de 18 anos.")
+        FIM_SE
+        
+        SE saldo < valor_total ENTAO
+            ESCREVA("Motivo: Saldo insuficiente.")
+        FIM_SE
+    FIM_SE
+
+FIMALGORITMO
