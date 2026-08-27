@@ -1,0 +1,25 @@
+#1) Entrada de dados do cliente
+nome = input("Digite o nome do cliente: ")
+idade = input("Digite a idade do cliente: ")
+saldo = int(input("Digite o saldo do cliente (R$): "))
+#2) Definição do produto
+preco_produto = 5
+quantidade = int(input("Digite a quantidade desejada do produto (+18): "))
+#3) Cálculo do valor total
+valor_total= preco_produto*quantidade
+#4) Validação das condições Idade e Saldo
+if idade>= 18 e saldo >=valor_total:
+ saldo_restante = saldo-valor_total
+ #Emisão de comprovante
+ print("\n--- COMPROVANTE DE COMPRA ---")
+ print(f"Cliente: {nome}")
+ print(f"Quantidade: {quantidade} unidades")
+ print(f"Valor Total: R$ {saldo_restante:.2f}")
+ print("Status: Compra realizada com sucesso.")
+ print("---------------------------------")
+else:
+ print("\n--- COMPRA NÃO REALIZADA ---")
+ if idade < 18:
+  print("Motivo: Venda proibida para menores de 18 anos.")
+ if saldo < valor_total:
+  print(f"Motivo: Saldo insuficiente")
