@@ -7,7 +7,7 @@ VAR
     quantidade : INTEIRO
 
 INICIO
-    // 1) Entrada de dados do cliente
+    Entrada de dados do cliente
     ESCREVA("Digite o nome do cliente: ")
     LEIA(nome)
     
@@ -17,15 +17,15 @@ INICIO
     ESCREVA("Digite o saldo do cliente (R$): ")
     LEIA(saldo)
     
-    // 2) Definição do produto
+    Definição do produto
     preco_produto <- 5.0
     ESCREVA("Digite a quantidade desejada do produto (+18): ")
     LEIA(quantidade)
     
-    // 3) Cálculo do valor total
+    Cálculo do valor total
     valor_total <- preco_produto * quantidade
     
-    // 4) Validação das condições Idade e Saldo
+     Validação das condições Idade e Saldo
     SE (idade >= 18) E (saldo >= valor_total) ENTAO
         saldo_restante <- saldo - valor_total
         
