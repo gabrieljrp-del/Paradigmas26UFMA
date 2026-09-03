@@ -1,0 +1,55 @@
+Algoritmo CaixaEletronico
+Var
+    opcao : Inteiro
+    saldo, valor : Real
+    continuar : Logico
+
+Inicio
+    saldo <- 1000.00
+    continuar <- Verdadeiro
+
+    Enquanto continuar = Verdadeiro Faca
+        Escreval("--- CAIXA ELETRÔNICO ---")
+        Escreval("1 - Consultar Saldo")
+        Escreval("2 - Depositar")
+        Escreval("3 - Sacar")
+        Escreval("4 - Encerrar")
+        Escreva("Escolha uma opção: ")
+        Leia(opcao)
+
+        Processamento da escolha
+        Escolha opcao
+            Caso 1
+                Escreval("Seu saldo atual é: R$ ", saldo)
+            
+            Caso 2
+                Escreva("Digite o valor do depósito: R$ ")
+                Leia(valor)
+                Se valor > 0 Entao
+                    saldo <- saldo + valor
+                    Escreval("Depósito realizado com sucesso!")
+                Senao
+                    Escreval("Valor inválido para depósito.")
+                FimSe
+            
+            Caso 3
+                Escreva("Digite o valor do saque: R$ ")
+                Leia(valor)
+                Se (valor > 0) E (valor <= saldo) Entao
+                    saldo <- saldo - valor
+                    Escreval("Saque realizado com sucesso!")
+                Senao
+                    Escreval("Saldo insuficiente ou valor inválido.")
+                FimSe
+            
+            Caso 4
+                Escreval("Encerrando o sistema. Obrigado por utilizar nosso banco!")
+                continuar <- Falso
+            
+            Caso Contrario
+                Escreval("Opção inválida! Tente novamente.")
+        FimEscolha
+        
+        Escreval("")
+    FimEnquanto
+FimAlgoritmo
