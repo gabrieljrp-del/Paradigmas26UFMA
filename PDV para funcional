@@ -1,0 +1,69 @@
+def consultar_saldo(saldo):
+    print(f"Seu saldo atual é: R$ {saldo:.2f}")
+
+
+def depositar(saldo, valor):
+    if valor > 0:
+        novo_saldo = saldo + valor
+        print("Depósito realizado com sucesso!")
+        return novo_saldo
+    else:
+        print("Valor inválido para depósito.")
+        return saldo
+
+
+def sacar(saldo, valor):
+    if valor > 0 and valor <= saldo:
+        novo_saldo = saldo - valor
+        print("Saque realizado com sucesso!")
+        return novo_saldo
+    else:
+        print("Saldo insuficiente ou valor inválido.")
+        return saldo
+
+
+def processar_opcao(opcao, saldo):
+    if opcao == 1:
+        consultar_saldo(saldo)
+        return saldo, True
+
+    elif opcao == 2:
+        valor = float(input("Digite o valor do depósito: R$ "))
+        novo_saldo = depositar(saldo, valor)
+        return novo_saldo, True
+
+    elif opcao == 3:
+        valor = float(input("Digite o valor do saque: R$ "))
+        novo_saldo = sacar(saldo, valor)
+        return novo_saldo, True
+
+    elif opcao == 4:
+        print("Encerrando o sistema. Obrigado por utilizar nosso banco!")
+        return saldo, False
+
+    else:
+        print("Opção inválida! Tente novamente.")
+        return saldo, True
+
+
+def caixa_eletronico(saldo):
+    print("\n--- CAIXA ELETRÔNICO ---")
+    print("1 - Consultar Saldo")
+    print("2 - Depositar")
+    print("3 - Sacar")
+    print("4 - Encerrar")
+
+    opcao = int(input("Escolha uma opção: "))
+
+    novo_saldo, continuar = processar_opcao(opcao, saldo)
+
+    if continuar:
+        caixa_eletronico(novo_saldo)
+
+
+def main():
+    saldo_inicial = 1000.00
+    caixa_eletronico(saldo_inicial)
+
+
+main()
