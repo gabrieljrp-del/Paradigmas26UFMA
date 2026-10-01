@@ -62,7 +62,7 @@ def caixa_eletronico(saldo):
 
 
 def main():
-    saldo_inicial = 1000.00
+    saldo_inicial = 1000.00 
     caixa_eletronico(saldo_inicial)
 
 
