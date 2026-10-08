@@ -1,0 +1,13 @@
+Número_NF: int
+série_NF:int
+CNPJ_emitente:str
+CNPJ_destnatario:str
+nome_emitente:str
+nome_destinatario:strg
+valor_nota:float
+possui_IPI:boll
+-------------------
+consultarnota()
+recebernota()
+negarnota()
+devolvernota()
