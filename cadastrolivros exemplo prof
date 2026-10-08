@@ -1,0 +1,12 @@
+autot: str
+edição: int
+anolancamento: int
+qtd paginas: int
+titulo: str
+dimensoes: float
+capadura: bool
+--------------
+cadastrolivro()
+consultacadastrolivro()
+atualizarcadastrolivro()
+excluircadastrolivro()
