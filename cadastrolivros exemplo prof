@@ -10,3 +10,18 @@ cadastrolivro()
 consultacadastrolivro()
 atualizarcadastrolivro()
 excluircadastrolivro()
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Main{
+ public static void main(string[] args) {
+  public class CadastroLivro{
+
+   String auto;
+   Atring titulo;
+   int ano;
+   int edicao;
+   float dimensao;
+   boolean capaDura;
