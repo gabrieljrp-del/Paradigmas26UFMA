@@ -1,10 +1,16 @@
-public interface Led{
-void Ligar();
-void Desligar();
+public interface Led {
+    void Ligar();
+    void Desligar();
 }
 
-public class TV implement Led{
-@override
-public void Ligar() { System.out.println("A TV está ligada");}
-public void Desligar() { System.out.println("A TV está desligada");}
+public class TV implements Led {
+    @Override
+    public void Ligar() {
+        System.out.println("A TV está ligada");
+    }
+    
+    @Override
+    public void Desligar() {
+        System.out.println("A TV está desligada");
+    }
 }
