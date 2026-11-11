@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+class ContaBancaria {
+    private double saldo;
+
+    // Construtor para inicializar a conta com um saldo inicial
+    public ContaBancaria(double saldoInicial) {
+        if (saldoInicial >= 0) {
+            this.saldo = saldoInicial;
+        } else {
+            this.saldo = 0.0;
+        }
+    }
+
+    // Consulta o saldo atual
+    public void consultarSaldo() {
+        System.out.printf("Seu saldo atual é: R$ %.2f%n", saldo);
+    }
+
+    // Realiza o depósito
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("Depósito realizado com sucesso!");
+        } else {
+            System.out.println("Valor inválido para depósito.");
+        }
+    }
+
+    // Realiza o saque
+    public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque realizado com sucesso!");
+        } else {
+            System.out.println("Saldo insuficiente ou valor inválido.");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ContaBancaria conta = new ContaBancaria(1000.00);
+        int opcao;
+
+        do {
+            System.out.println("\n--- CAIXA ELETRÔNICO ---");
+            System.out.println("1 - Consultar Saldo");
+            System.out.println("2 - Depositar");
+            System.out.println("3 - Sacar");
+            System.out.println("4 - Encerrar");
+            System.out.print("Escolha uma opção: ");
+
+            // Validação simples para evitar erro caso o usuário digite texto
+            if (!scanner.hasNextInt()) {
+                System.out.println("Opção inválida! Tente novamente.");
+                scanner.next(); // Descarta entrada inválida
+                opcao = 0;
+                continue;
+            }
+
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    conta.consultarSaldo();
+                    break;
+                case 2:
+                    System.out.print("Digite o valor do depósito: R$ ");
+                    double valorDeposito = scanner.nextDouble();
+                    conta.depositar(valorDeposito);
+                    break;
+                case 3:
+                    System.out.print("Digite o valor do saque: R$ ");
+                    double valorSaque = scanner.nextDouble();
+                    conta.sacar(valorSaque);
+                    break;
+                case 4:
+                    System.out.println("Encerrando o sistema. Obrigado por utilizar nosso banco!");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+                    break;
+            }
+        } while (opcao != 4);
+
+        scanner.close();
+    }
+}
