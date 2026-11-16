@@ -1,0 +1,3 @@
+Alunos: GABRIEL JACINTO RODRIGUES PINTO, ANGELICA DA SILVA ALVES.
+
+Quando fui pro java eu mudei bastante a estrutura porque tirei aquela lógica de mandar o saldo de função em função e criei uma classe ContaBancaria pra cuidar disso. No lugar da recursão do python eu botei um do-while e troquei os ifs por switch-case. Ficou bem mais orientado a objeto e adicionei o scanner pra evitar que o programa quebre se alguém digitar letra onde é número.
