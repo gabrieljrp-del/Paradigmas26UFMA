@@ -3,7 +3,6 @@ import java.util.Scanner;
 class ContaBancaria {
     private double saldo;
 
-    // Construtor para inicializar a conta com um saldo inicial
     public ContaBancaria(double saldoInicial) {
         if (saldoInicial >= 0) {
             this.saldo = saldoInicial;
@@ -12,12 +11,10 @@ class ContaBancaria {
         }
     }
 
-    // Consulta o saldo atual
     public void consultarSaldo() {
         System.out.printf("Seu saldo atual é: R$ %.2f%n", saldo);
     }
 
-    // Realiza o depósito
     public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
@@ -27,7 +24,6 @@ class ContaBancaria {
         }
     }
 
-    // Realiza o saque
     public void sacar(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
@@ -52,10 +48,9 @@ public class Main {
             System.out.println("4 - Encerrar");
             System.out.print("Escolha uma opção: ");
 
-            // Validação simples para evitar erro caso o usuário digite texto
             if (!scanner.hasNextInt()) {
                 System.out.println("Opção inválida! Tente novamente.");
-                scanner.next(); // Descarta entrada inválida
+                scanner.next();
                 opcao = 0;
                 continue;
             }
